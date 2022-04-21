@@ -1,1 +1,0 @@
-<span th:with="days=${T(java.util.concurrent.TimeUnit).DAYS}, millis=${T(java.util.concurrent.TimeUnit).MILLISECONDS}" th:text="${days.convert(#dates.createNow().getTime() - feed.dateCreated.getTime(), millis)}" />
