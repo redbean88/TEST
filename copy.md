@@ -1,258 +1,181 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "type": "AdaptiveCard",
-    "version": "1.3",
-    "speak": "<s>Flight KL0605 to San Fransisco has been delayed.</s><s>It will not leave until 10:10 AM.</s>",
-    "body": [
-        {
-            "type": "ColumnSet",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "Image",
-                            "size": "Small",
-                            "url": "https://adaptivecards.io/content/airplane.png",
-                            "altText": "Airplane"
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Flight Status",
-                            "horizontalAlignment": "Right",
-                            "isSubtle": true,
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "DELAYED",
-                            "horizontalAlignment": "Right",
-                            "spacing": "None",
-                            "size": "Large",
-                            "color": "Attention",
-                            "wrap": true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "separator": true,
-            "spacing": "Medium",
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": "stretch",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Passengers",
-                            "isSubtle": true,
-                            "weight": "Bolder",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Sarah Hum",
-                            "spacing": "Small",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Jeremy Goldberg",
-                            "spacing": "Small",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Evan Litvak",
-                            "spacing": "Small",
-                            "wrap": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Seat",
-                            "horizontalAlignment": "Right",
-                            "isSubtle": true,
-                            "weight": "Bolder",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "14A",
-                            "horizontalAlignment": "Right",
-                            "spacing": "Small",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "14B",
-                            "horizontalAlignment": "Right",
-                            "spacing": "Small",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "14C",
-                            "horizontalAlignment": "Right",
-                            "spacing": "Small",
-                            "wrap": true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Medium",
-            "separator": true,
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Flight",
-                            "isSubtle": true,
-                            "weight": "Bolder",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "KL605",
-                            "spacing": "Small",
-                            "wrap": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Departs",
-                            "isSubtle": true,
-                            "horizontalAlignment": "Center",
-                            "weight": "Bolder",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "{{TIME(2017-03-04T09:20:00-01:00)}}",
-                            "color": "Attention",
-                            "weight": "Bolder",
-                            "horizontalAlignment": "Center",
-                            "spacing": "Small",
-                            "wrap": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Arrives",
-                            "isSubtle": true,
-                            "horizontalAlignment": "Right",
-                            "weight": "Bolder",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "{{TIME(2017-03-05T08:20:00+04:00)}}",
-                            "color": "Attention",
-                            "horizontalAlignment": "Right",
-                            "weight": "Bolder",
-                            "spacing": "Small",
-                            "wrap": true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "ColumnSet",
-            "spacing": "Medium",
-            "separator": true,
-            "columns": [
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "Amsterdam Airport",
-                            "isSubtle": true,
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "AMS",
-                            "size": "ExtraLarge",
-                            "color": "Accent",
-                            "spacing": "None",
-                            "wrap": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": " ",
-                            "wrap": true
-                        },
-                        {
-                            "type": "Image",
-                            "url": "https://adaptivecards.io/content/airplane.png",
-                            "altText": "Airplane",
-                            "size": "Small"
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": 1,
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "text": "San Francisco Airport",
-                            "isSubtle": true,
-                            "horizontalAlignment": "Right",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "SFO",
-                            "horizontalAlignment": "Right",
-                            "size": "ExtraLarge",
-                            "color": "Accent",
-                            "spacing": "None",
-                            "wrap": true
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+	"$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+	"type": "AdaptiveCard",
+	"version": "1.0",
+	"body": [
+		{
+			"type": "ColumnSet",
+			"columns": [
+				{
+					"width": "32px",
+					"items": [
+						{
+							"type": "Image",
+							"width": "16px",
+							"horizontalAlignment": "center",
+							"url": "https://messagecardplayground.azurewebsites.net/assets/trello-logo.png",
+							"altText": "Trello Logo"
+						}
+					]
+				},
+				{
+					"width": "stretch",
+					"items": [
+						{
+							"type": "TextBlock",
+							"text": "Trello"
+						}
+					]
+				},
+				{
+					"width": "auto",
+					"verticalContentAlignment": "center",
+					"items": [
+						{
+							"type": "Image",
+							"width": "12px",
+							"url": "https://messagecardplayground.azurewebsites.net/assets/Close.png",
+							"altText": "Close"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "ColumnSet",
+			"spacing": "large",
+			"separator": true,
+			"columns": [
+				{
+					"width": "32px",
+					"items": [
+						{
+							"type": "Image",
+							"width": "32px",
+							"style": "person",
+							"horizontalAlignment": "center",
+							"url": "https://messagecardplayground.azurewebsites.net/assets/person_m2.png",
+							"altText": "Leo Adams Profile Picture"
+						}
+					]
+				},
+				{
+					"width": "stretch",
+					"items": [
+						{
+							"type": "TextBlock",
+							"text": "**Leo Adams added a card**"
+						},
+						{
+							"type": "TextBlock",
+							"spacing": "none",
+							"isSubtle": true,
+							"text": "\"Visual design for Project A\" to \"Fabrikam\" list"
+						},
+						{
+							"type": "TextBlock",
+							"spacing": "small",
+							"isSubtle": true,
+							"text": "Due date: 12/12/2017"
+						},
+						{
+							"type": "TextBlock",
+							"spacing": "none",
+							"isSubtle": true,
+							"wrap": true,
+							"text": "Comment: \"We need to make sure we have updated designs for our meeting on Monday.\""
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "Container",
+			"items": [
+				{
+					"type": "ColumnSet",
+					"columns": [
+						{
+							"width": "32px"
+						},
+						{
+							"width": "stretch",
+							"items": [
+								{
+									"type": "ActionSet",
+									"actions": [
+										{
+											"type": "Action.ShowCard",
+											"title": "Add a comment",
+											"card": {
+												"type": "AdaptiveCard",
+												"body": [
+													{
+														"type": "Input.Text",
+														"isMultiline": true,
+														"id": "textinputid"
+													},
+													{
+														"type": "ActionSet",
+														"spacing": "small",
+														"actions": [
+															{
+																"type": "Action.Http",
+																"method": "POST",
+																"body": "{}",
+																"title": "OK",
+																"url": "https://messagecardplaygroundfn.azurewebsites.net/"
+															}
+														]
+													}
+												]
+											}
+										},
+										{
+											"type": "Action.ShowCard",
+											"title": "Move card",
+											"card": {
+												"type": "AdaptiveCard",
+												"body": [
+													{
+														"type": "Input.ChoiceSet",
+														"placeholder": "Pick a list",
+														"id": "choiceinputid",
+														"isRequired": true,
+														"choices": [
+															{
+																"title": "List 1",
+																"value": "List 1"
+															},
+															{
+																"title": "List 2",
+																"value": "List 2"
+															}
+														]
+													},
+													{
+														"type": "ActionSet",
+														"spacing": "small",
+														"actions": [
+															{
+																"type": "Action.Http",
+																"method": "POST",
+																"body": "{{choiceinputid.value}}",
+																"title": "OK",
+																"url": "https://messagecardplaygroundfn.azurewebsites.net/"
+															}
+														]
+													}
+												]
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
 }
