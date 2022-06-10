@@ -105,3 +105,4 @@
     ],
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "version": "1.5"
+}
