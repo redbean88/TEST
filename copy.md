@@ -1,80 +1,107 @@
 {
-    "@type": "MessageCard",
-    "@context": "http://schema.org/extensions",
-    "themeColor": "0076D7",
-    "summary": "Larry Bryant created a new task",
-    "sections": [{
-        "activityTitle": "Larry Bryant created a new task",
-        "activitySubtitle": "On Project Tango",
-        "activityImage": "https://teamsnodesample.azurewebsites.net/static/img/image5.png",
-        "facts": [{
-            "name": "Assigned to",
-            "value": "Unassigned"
-        }, {
-            "name": "Due date",
-            "value": "Mon May 01 2017 17:07:18 GMT-0700 (Pacific Daylight Time)"
-        }, {
-            "name": "Status",
-            "value": "Not started"
-        }],
-        "markdown": true
-    }],
-    "potentialAction": [{
-        "@type": "ActionCard",
-        "name": "Add a comment",
-        "inputs": [{
-            "@type": "TextInput",
-            "id": "comment",
-            "isMultiline": false,
-            "title": "Add a comment here for this task"
-        }],
-        "actions": [{
-            "@type": "HttpPOST",
-            "name": "Add comment",
-            "target": "https://docs.microsoft.com/outlook/actionable-messages"
-        }]
-    }, {
-        "@type": "ActionCard",
-        "name": "Set due date",
-        "inputs": [{
-            "@type": "DateInput",
-            "id": "dueDate",
-            "title": "Enter a due date for this task"
-        }],
-        "actions": [{
-            "@type": "HttpPOST",
-            "name": "Save",
-            "target": "https://docs.microsoft.com/outlook/actionable-messages"
-        }]
-    }, {
-        "@type": "OpenUri",
-        "name": "Learn More",
-        "targets": [{
-            "os": "default",
-            "uri": "https://docs.microsoft.com/outlook/actionable-messages"
-        }]
-    }, {
-        "@type": "ActionCard",
-        "name": "Change status",
-        "inputs": [{
-            "@type": "MultichoiceInput",
-            "id": "list",
-            "title": "Select a status",
-            "isMultiSelect": "false",
-            "choices": [{
-                "display": "In Progress",
-                "value": "1"
-            }, {
-                "display": "Active",
-                "value": "2"
-            }, {
-                "display": "Closed",
-                "value": "3"
-            }]
-        }],
-        "actions": [{
-            "@type": "HttpPOST",
-            "name": "Save",
-            "target": "https://docs.microsoft.com/outlook/actionable-messages"
-        }]
-    }]
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Publish Adaptive Card Schema"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "style": "Person",
+                            "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
+                            "size": "Small"
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Matt Hidinger",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "spacing": "None",
+                            "text": "Created {{DATE(2017-02-14T06:08:39Z,SHORT)}}",
+                            "isSubtle": true,
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
+            "wrap": true
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "Board:",
+                    "value": "Adaptive Cards"
+                },
+                {
+                    "title": "List:",
+                    "value": "Backlog"
+                },
+                {
+                    "title": "Assigned to:",
+                    "value": "Matt Hidinger"
+                },
+                {
+                    "title": "Due date:",
+                    "value": "Not set"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Set due date",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "Input.Date",
+                        "id": "dueDate"
+                    },
+                    {
+                        "type": "Input.Text",
+                        "id": "comment",
+                        "placeholder": "Add a comment",
+                        "isMultiline": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "OK"
+                    }
+                ],
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            }
+        },
+        {
+            "type": "Action.OpenUrl",
+            "title": "View",
+            "url": "https://adaptivecards.io"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"
