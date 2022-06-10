@@ -1,33 +1,80 @@
-Key	Name	Type	Required	Description
-organization	기관코드	String	O	
-birthDate	생년월일	String	△	[생년월일/주민등록번호], 제한직전 필수 입력하는 기관존재
-reqMemberStoreNoList	가맹점번호 목록	Object	O	반복부 키
-
-Key	Name	Type	Required	Description
-reqMemberStoreNo	가맹점번호	String	O
-
-Key	Name	Type	Required	Description
-reqCount	요청 건수	String	O	
-inflowCount	신규등록 건수	String	O	
-
-Key	Name	Type	Required	Description
-organization	기관코드	String	O	
-reqMemberStoreNoList	가맹점번호 목록	Object	O	반복부 키
-
-Key	Name	Type	Required	Description
-reqMemberStoreNo	가맹점번호	String	O	승인내역에서 반환받은 가맹점번호 값을 사용
-
-Key	Name	Type	Required	Description
-resMemberStoreNo	가맹점번호	String	O	입력받은 가맹점번호
-resMemberStoreName	가맹점명	String	O	
-resMemberStoreCorpNo	가맹점 사업자번호	String	O	
-resMemberStoreType	가맹점 업종	String	△	
-resMemberStoreTelNo	가맹점 전화번호	String	△	
-resMemberStoreAddr	가맹점주소	String	△	
-resCeoName	대표자	String	△	[대표자명]
-resLnkUrl	바로가기	String	△	[홈페이지 주소]
-commStartDate	조회시작일자	String	△	[조회기간_시작일자]
-commEndDate	조회종료일자	String	△	[조회기간_종료일자]
-resResultCode	결과코드	String	O	스크래핑 건별 결과코드 (espider errorCode) : 성공일 경우 0으로
-resUserError	UserError	String	O	스크래핑 건별 userError (espider errorCode)
-resUserErrorMessage	UserErrorMessage	String	O	스크래핑 건별 userErrorMessage (espider errorCode)
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "Larry Bryant created a new task",
+    "sections": [{
+        "activityTitle": "Larry Bryant created a new task",
+        "activitySubtitle": "On Project Tango",
+        "activityImage": "https://teamsnodesample.azurewebsites.net/static/img/image5.png",
+        "facts": [{
+            "name": "Assigned to",
+            "value": "Unassigned"
+        }, {
+            "name": "Due date",
+            "value": "Mon May 01 2017 17:07:18 GMT-0700 (Pacific Daylight Time)"
+        }, {
+            "name": "Status",
+            "value": "Not started"
+        }],
+        "markdown": true
+    }],
+    "potentialAction": [{
+        "@type": "ActionCard",
+        "name": "Add a comment",
+        "inputs": [{
+            "@type": "TextInput",
+            "id": "comment",
+            "isMultiline": false,
+            "title": "Add a comment here for this task"
+        }],
+        "actions": [{
+            "@type": "HttpPOST",
+            "name": "Add comment",
+            "target": "https://docs.microsoft.com/outlook/actionable-messages"
+        }]
+    }, {
+        "@type": "ActionCard",
+        "name": "Set due date",
+        "inputs": [{
+            "@type": "DateInput",
+            "id": "dueDate",
+            "title": "Enter a due date for this task"
+        }],
+        "actions": [{
+            "@type": "HttpPOST",
+            "name": "Save",
+            "target": "https://docs.microsoft.com/outlook/actionable-messages"
+        }]
+    }, {
+        "@type": "OpenUri",
+        "name": "Learn More",
+        "targets": [{
+            "os": "default",
+            "uri": "https://docs.microsoft.com/outlook/actionable-messages"
+        }]
+    }, {
+        "@type": "ActionCard",
+        "name": "Change status",
+        "inputs": [{
+            "@type": "MultichoiceInput",
+            "id": "list",
+            "title": "Select a status",
+            "isMultiSelect": "false",
+            "choices": [{
+                "display": "In Progress",
+                "value": "1"
+            }, {
+                "display": "Active",
+                "value": "2"
+            }, {
+                "display": "Closed",
+                "value": "3"
+            }]
+        }],
+        "actions": [{
+            "@type": "HttpPOST",
+            "name": "Save",
+            "target": "https://docs.microsoft.com/outlook/actionable-messages"
+        }]
+    }]
