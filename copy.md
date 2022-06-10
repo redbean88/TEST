@@ -1,108 +1,258 @@
 {
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
+    "version": "1.3",
+    "speak": "<s>Flight KL0605 to San Fransisco has been delayed.</s><s>It will not leave until 10:10 AM.</s>",
     "body": [
-        {
-            "type": "TextBlock",
-            "size": "Medium",
-            "weight": "Bolder",
-            "text": "Publish Adaptive Card Schema"
-        },
         {
             "type": "ColumnSet",
             "columns": [
                 {
                     "type": "Column",
+                    "width": "auto",
                     "items": [
                         {
                             "type": "Image",
-                            "style": "Person",
-                            "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
-                            "size": "Small"
+                            "size": "Small",
+                            "url": "https://adaptivecards.io/content/airplane.png",
+                            "altText": "Airplane"
                         }
-                    ],
-                    "width": "auto"
+                    ]
                 },
                 {
                     "type": "Column",
+                    "width": "stretch",
                     "items": [
                         {
                             "type": "TextBlock",
-                            "weight": "Bolder",
-                            "text": "Matt Hidinger",
+                            "text": "Flight Status",
+                            "horizontalAlignment": "Right",
+                            "isSubtle": true,
                             "wrap": true
                         },
                         {
                             "type": "TextBlock",
+                            "text": "DELAYED",
+                            "horizontalAlignment": "Right",
                             "spacing": "None",
-                            "text": "Created {{DATE(2017-02-14T06:08:39Z,SHORT)}}",
-                            "isSubtle": true,
+                            "size": "Large",
+                            "color": "Attention",
                             "wrap": true
                         }
-                    ],
-                    "width": "stretch"
+                    ]
                 }
             ]
         },
         {
-            "type": "TextBlock",
-            "text": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
-            "wrap": true
+            "type": "ColumnSet",
+            "separator": true,
+            "spacing": "Medium",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Passengers",
+                            "isSubtle": true,
+                            "weight": "Bolder",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Sarah Hum",
+                            "spacing": "Small",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Jeremy Goldberg",
+                            "spacing": "Small",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Evan Litvak",
+                            "spacing": "Small",
+                            "wrap": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Seat",
+                            "horizontalAlignment": "Right",
+                            "isSubtle": true,
+                            "weight": "Bolder",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "14A",
+                            "horizontalAlignment": "Right",
+                            "spacing": "Small",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "14B",
+                            "horizontalAlignment": "Right",
+                            "spacing": "Small",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "14C",
+                            "horizontalAlignment": "Right",
+                            "spacing": "Small",
+                            "wrap": true
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "type": "FactSet",
-            "facts": [
+            "type": "ColumnSet",
+            "spacing": "Medium",
+            "separator": true,
+            "columns": [
                 {
-                    "title": "Board:",
-                    "value": "Adaptive Cards"
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Flight",
+                            "isSubtle": true,
+                            "weight": "Bolder",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "KL605",
+                            "spacing": "Small",
+                            "wrap": true
+                        }
+                    ]
                 },
                 {
-                    "title": "List:",
-                    "value": "Backlog"
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Departs",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{TIME(2017-03-04T09:20:00-01:00)}}",
+                            "color": "Attention",
+                            "weight": "Bolder",
+                            "horizontalAlignment": "Center",
+                            "spacing": "Small",
+                            "wrap": true
+                        }
+                    ]
                 },
                 {
-                    "title": "Assigned to:",
-                    "value": "Matt Hidinger"
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Arrives",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Right",
+                            "weight": "Bolder",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{TIME(2017-03-05T08:20:00+04:00)}}",
+                            "color": "Attention",
+                            "horizontalAlignment": "Right",
+                            "weight": "Bolder",
+                            "spacing": "Small",
+                            "wrap": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "spacing": "Medium",
+            "separator": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Amsterdam Airport",
+                            "isSubtle": true,
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "AMS",
+                            "size": "ExtraLarge",
+                            "color": "Accent",
+                            "spacing": "None",
+                            "wrap": true
+                        }
+                    ]
                 },
                 {
-                    "title": "Due date:",
-                    "value": "Not set"
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": " ",
+                            "wrap": true
+                        },
+                        {
+                            "type": "Image",
+                            "url": "https://adaptivecards.io/content/airplane.png",
+                            "altText": "Airplane",
+                            "size": "Small"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "San Francisco Airport",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Right",
+                            "wrap": true
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "SFO",
+                            "horizontalAlignment": "Right",
+                            "size": "ExtraLarge",
+                            "color": "Accent",
+                            "spacing": "None",
+                            "wrap": true
+                        }
+                    ]
                 }
             ]
         }
-    ],
-    "actions": [
-        {
-            "type": "Action.ShowCard",
-            "title": "Set due date",
-            "card": {
-                "type": "AdaptiveCard",
-                "body": [
-                    {
-                        "type": "Input.Date",
-                        "id": "dueDate"
-                    },
-                    {
-                        "type": "Input.Text",
-                        "id": "comment",
-                        "placeholder": "Add a comment",
-                        "isMultiline": true
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "Action.Submit",
-                        "title": "OK"
-                    }
-                ],
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-            }
-        },
-        {
-            "type": "Action.OpenUrl",
-            "title": "View",
-            "url": "https://adaptivecards.io"
-        }
-    ],
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.5"
+    ]
 }
