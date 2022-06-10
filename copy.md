@@ -1,4 +1,4 @@
-{
+[{
    "type":"message",
    "attachments":[
       {
@@ -17,3 +17,4 @@
          }
       }
    ]
+](https://adaptivecards.io/designer/)
