@@ -1,4 +1,9 @@
 {
+    "type": "message",
+    "attachments": [
+        {
+            "contentType": "application/vnd.microsoft.card.adaptive",
+            "content": {
                 "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
                 "type": "AdaptiveCard",
                 "version": "1.5",
@@ -16,7 +21,6 @@
                     },
                     {
                         "type": "Container",
-                        "text":"test",
                         "items": [
                             {
                                 "type": "TextBlock",
@@ -51,17 +55,9 @@
                                         ]
                                     },
                                     {
-                                        "type": "table",
-                                        "gridStyle" : "accent",
-                                        "columns" : [
-                                            {
-                                                "width" : 1
-                                            },
-                                            {
-                                                "width" : 3
-                                            }
-                                        ],
-                                        "row": [
+                                        "type": "Column",
+                                        "width": "auto",
+                                        "items": [
                                             {
                                                 "type": "FactSet",
                                                 "facts": [
@@ -100,3 +96,6 @@
                     }
                 ]
             }
+        }
+    ]
+}
