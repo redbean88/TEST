@@ -1,104 +1,110 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
-    "version": "1.5",
     "body": [
         {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "TextBlock",
-                    "text": "[prod][링크허브][자동승인]",
-                    "style": "heading"
-                },
-                {
-                    "type": "TextBlock",
-                    "text": "subtitle",
-                    "weight": "Bolder",
-                    "isSubtle": true
-                },
-                {
-                    "type": "TextBlock",
-                    "text": "----",
-                    "weight": "Bolder",
-                    "size": "Small"
-                }
-            ]
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Publish Adaptive Card Schema",
+            "wrap": true,
+            "style": "heading"
         },
         {
-            "type": "Container",
-            "items": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    "type": "TextBlock",
-                    "text": "2022년 6월 13일(월) 10:29:59",
-                    "wrap": true
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "spacing": "None",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
+                    "type": "Column",
+                    "items": [
                         {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "[대기 -> 완료]",
-                                    "size": "Large",
-                                    "wrap": true
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "입금자 : 홍길동",
-                                    "spacing": "None",
-                                    "wrap": true
-                                }
-                            ]
+                            "type": "Image",
+                            "style": "Person",
+                            "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
+                            "altText": "Matt Hidinger",
+                            "size": "Small"
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Matt Hidinger",
+                            "wrap": true
                         },
                         {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "입금액",
-                                            "value": "127 원"
-                                        },
-                                        {
-                                            "title": "출금액",
-                                            "value": "129 원"
-                                        },
-                                        {
-                                            "title": "잔액",
-                                            "value": "1,000,000 원"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "type": "TextBlock",
+                            "spacing": "None",
+                            "text": "Created {{DATE(2017-02-14T06:08:39Z, SHORT)}}",
+                            "isSubtle": true,
+                            "wrap": true
                         }
-                    ]
+                    ],
+                    "width": "stretch"
                 }
             ]
         },
         {
-            "type": "ActionSet",
-            "actions": [
+            "type": "TextBlock",
+            "text": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
+            "wrap": true
+        },
+        {
+            "type": "FactSet",
+            "facts": [
                 {
-                    "type": "Action.OpenUrl",
-                    "style": "positive",
-                    "url": "https://inside.linkhub.kr/Point/V2/Settle/DashBoard",
-                    "title": "결제관리 이동",
-                    "tooltip": "인사이드 결제관리 화면으로 이동합니다.",
-                    "isEnabled": false
+                    "title": "Board:",
+                    "value": "Adaptive Cards"
+                },
+                {
+                    "title": "List:",
+                    "value": "Backlog"
+                },
+                {
+                    "title": "Assigned to:",
+                    "value": "Matt Hidinger"
+                },
+                {
+                    "title": "Due date:",
+                    "value": "Not set"
                 }
             ]
         }
-    ]
-}
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Set due date",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "Input.Date",
+                        "id": "dueDate"
+                    },
+                    {
+                        "type": "Input.Text",
+                        "id": "comment",
+                        "placeholder": "Add a comment",
+                        "isMultiline": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "OK"
+                    }
+                ],
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            }
+        },
+        {
+            "type": "Action.OpenUrl",
+            "title": "View",
+            "url": "https://adaptivecards.io"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"
