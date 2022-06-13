@@ -3,11 +3,17 @@
     "body": [
         {
             "type": "TextBlock",
-            "size": "Medium",
             "weight": "Bolder",
-            "text": "Publish Adaptive Card Schema",
+            "text": "[팝빌 - 상업용][정산담당자 정보변경]",
             "wrap": true,
             "style": "heading"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "isSubtle": true,
+            "text": "Created {{DATE(2017-02-14T06:08:39Z, SHORT)}}",
+            "spacing": "None"
         },
         {
             "type": "ColumnSet",
@@ -16,90 +22,52 @@
                     "type": "Column",
                     "items": [
                         {
-                            "type": "Image",
-                            "style": "Person",
-                            "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
-                            "altText": "Matt Hidinger",
-                            "size": "Small"
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "파트너명",
+                                    "value": "조선대학교[123-45-67890]"
+                                },
+                                {
+                                    "title": "회원명",
+                                    "value": "링크허브[123-45-67890]"
+                                }
+                            ]
                         }
                     ],
-                    "width": "auto"
-                },
-                {
-                    "type": "Column",
-                    "items": [
-                        {
-                            "type": "TextBlock",
-                            "weight": "Bolder",
-                            "text": "Matt Hidinger",
-                            "wrap": true
-                        },
-                        {
-                            "type": "TextBlock",
-                            "spacing": "None",
-                            "text": "Created {{DATE(2017-02-14T06:08:39Z, SHORT)}}",
-                            "isSubtle": true,
-                            "wrap": true
-                        }
-                    ],
-                    "width": "stretch"
+                    "width": "stretch",
+                    "horizontalAlignment": "Left"
                 }
             ]
         },
         {
             "type": "TextBlock",
-            "text": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
-            "wrap": true
+            "wrap": true,
+            "text": "정산담당자정보",
+            "weight": "Default",
+            "spacing": "Medium",
+            "separator": true,
+            "size": "Large"
         },
         {
             "type": "FactSet",
             "facts": [
                 {
-                    "title": "Board:",
-                    "value": "Adaptive Cards"
+                    "title": "성명",
+                    "value": "홍길동"
                 },
                 {
-                    "title": "List:",
-                    "value": "Backlog"
+                    "title": "연락처",
+                    "value": "010-1234-1234"
                 },
                 {
-                    "title": "Assigned to:",
-                    "value": "Matt Hidinger"
-                },
-                {
-                    "title": "Due date:",
-                    "value": "Not set"
+                    "title": "이메일",
+                    "value": "hong@linkhub.co.kr"
                 }
             ]
         }
     ],
     "actions": [
-        {
-            "type": "Action.ShowCard",
-            "title": "Set due date",
-            "card": {
-                "type": "AdaptiveCard",
-                "body": [
-                    {
-                        "type": "Input.Date",
-                        "id": "dueDate"
-                    },
-                    {
-                        "type": "Input.Text",
-                        "id": "comment",
-                        "placeholder": "Add a comment",
-                        "isMultiline": true
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "Action.Submit",
-                        "title": "OK"
-                    }
-                ],
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-            }
-        },
         {
             "type": "Action.OpenUrl",
             "title": "View",
@@ -108,3 +76,4 @@
     ],
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "version": "1.5"
+}
