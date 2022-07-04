@@ -7,28 +7,19 @@ amqp.connect('amqp://localhost', function(error0, connection) {
       throw error1;
     }
     var exchange = 'topic_logs';
+    var args = process.argv.slice(2);
+    var key = (args.length > 0) ? args[0] : 'anonymous.info';
+    var msg = args.slice(1).join(' ') || 'Hello World!';
 
     channel.assertExchange(exchange, 'topic', {
       durable: false
     });
-
-    channel.assertQueue('', {
-      exclusive: true
-    }, function(error2, q) {
-      if (error2) {
-        throw error2;
-      }
-      console.log(' [*] Waiting for logs. To exit press CTRL+C');
-
-      args.forEach(function(key) {
-        channel.bindQueue(q.queue, exchange, key);
-      });
-
-      channel.consume(q.queue, function(msg) {
-        console.log(" [x] %s:'%s'", msg.fields.routingKey, msg.content.toString());
-      }, {
-        noAck: true
-      });
-    });
+    channel.publish(exchange, key, Buffer.from(msg));
+    console.log(" [x] Sent %s:'%s'", key, msg);
   });
+
+  setTimeout(function() {
+    connection.close();
+    process.exit(0)
+  }, 500);
 });
