@@ -1,25 +1,68 @@
-amqp.connect('amqp://localhost', function(error0, connection) {
-  if (error0) {
-    throw error0;
-  }
-  connection.createChannel(function(error1, channel) {
-    if (error1) {
-      throw error1;
-    }
-    var exchange = 'topic_logs';
-    var args = process.argv.slice(2);
-    var key = (args.length > 0) ? args[0] : 'anonymous.info';
-    var msg = args.slice(1).join(' ') || 'Hello World!';
+Big O complexities for common methods of Java Collections and common sorting algorithms.
 
-    channel.assertExchange(exchange, 'topic', {
-      durable: false
-    });
-    channel.publish(exchange, key, Buffer.from(msg));
-    console.log(" [x] Sent %s:'%s'", key, msg);
-  });
 
-  setTimeout(function() {
-    connection.close();
-    process.exit(0)
-  }, 500);
-});
+Complexity (Best to Worst)
+===================================================================================================
+O(1)  <  O(log n)  <  O(n)  <  O(n log n)  <  O(n^2)  <  O(2^n)  <  O(n!)
+
+
+Collections
+===================================================================================================
+
+List                 | Add  | Remove | Get  | Contains | Next | Data Structure
+---------------------|------|--------|------|----------|------|---------------
+ArrayList            | O(1) |  O(n)  | O(1) |   O(n)   | O(1) | Array
+LinkedList           | O(1) |  O(1)  | O(n) |   O(n)   | O(1) | Linked List
+CopyOnWriteArrayList | O(n) |  O(n)  | O(1) |   O(n)   | O(1) | Array
+
+Set                   |    Add   |  Remove  | Contains |   Next   | Size | Data Structure
+----------------------|----------|----------|----------|----------|------|-------------------------
+HashSet               | O(1)     | O(1)     | O(1)     | O(h/n)   | O(1) | Hash Table
+LinkedHashSet         | O(1)     | O(1)     | O(1)     | O(1)     | O(1) | Hash Table + Linked List
+EnumSet               | O(1)     | O(1)     | O(1)     | O(1)     | O(1) | Bit Vector
+TreeSet               | O(log n) | O(log n) | O(log n) | O(log n) | O(1) | Red-black tree
+CopyOnWriteArraySet   | O(n)     | O(n)     | O(n)     | O(1)     | O(1) | Array
+ConcurrentSkipListSet | O(log n) | O(log n) | O(log n) | O(1)     | O(n) | Skip List
+
+Queue                   |  Offer   | Peek |   Poll   | Remove | Size | Data Structure
+------------------------|----------|------|----------|--------|------|---------------
+PriorityQueue           | O(log n) | O(1) | O(log n) |  O(n)  | O(1) | Priority Heap
+LinkedList              | O(1)     | O(1) | O(1)     |  O(1)  | O(1) | Array
+ArrayDequeue            | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Linked List
+ConcurrentLinkedQueue   | O(1)     | O(1) | O(1)     |  O(n)  | O(n) | Linked List
+ArrayBlockingQueue      | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Array
+PriorirityBlockingQueue | O(log n) | O(1) | O(log n) |  O(n)  | O(1) | Priority Heap
+SynchronousQueue        | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | None!
+DelayQueue              | O(log n) | O(1) | O(log n) |  O(n)  | O(1) | Priority Heap
+LinkedBlockingQueue     | O(1)     | O(1) | O(1)     |  O(n)  | O(1) | Linked List
+
+Map                   |   Get    | ContainsKey |   Next   | Data Structure
+----------------------|----------|-------------|----------|-------------------------
+HashMap               | O(1)     |   O(1)      | O(h/n)   | Hash Table
+LinkedHashMap         | O(1)     |   O(1)      | O(1)     | Hash Table + Linked List
+IdentityHashMap       | O(1)     |   O(1)      | O(h/n)   | Array
+WeakHashMap           | O(1)     |   O(1)      | O(h/n)   | Hash Table
+EnumMap               | O(1)     |   O(1)      | O(1)     | Array
+TreeMap               | O(log n) |   O(log n)  | O(log n) | Red-black tree
+ConcurrentHashMap     | O(1)     |   O(1)      | O(h/n)   | Hash Tables
+ConcurrentSkipListMap | O(log n) |   O(log n)  | O(1)     | Skip List
+
+
+Sorting
+===================================================================================================
+
+Algorithm      |    Best      |   Average    |    Worst     | Space Complexity
+---------------|--------------|--------------|--------------|------------------
+Quicksort      | O(n log n)   | O(n log n)   | O(n^2)       | O(log n)
+Mergesort      | O(n log n)   | O(n log n)   | O(n log n)   | O(n)
+Timsort        | O(n)         | O(n log n)   | O(n log n)   | O(n)
+Heapsort       | O(n log n)   | O(n log n)   | O(n log n)   | O(1)
+Bubble Sort    | O(n)         | O(n^2)       | O(n^2)       | O(1)
+Insertion Sort | O(n)         | O(n^2)       | O(n^2)       | O(1) 
+Selection Sort | O(n^2)       | O(n^2)       | O(n^2)       | O(1)
+Tree Sort      | O(n log n)   | O(n log n)   | O(n^2)       | O(n)
+Shell Sort     | O(n log n)   | O(n log^2 n) | O(n log^2 n) | O(1)
+Bucket Sort    | O(n+k)       | O(n+k)       | O(n^2)       | O(n)
+Radix Sort     | O(nk)        | O(nk)        | O(nk)        | O(n+k)
+Counting Sort  | O(n+k)       | O(n+k)       | O(n+k)       | O(k)
+Cubesort       | O(n)         | O(n log n)   | O(n log n)   | O(n)
